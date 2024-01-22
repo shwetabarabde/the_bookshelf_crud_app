@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+
+  flask-service:
+    container_name: flask-service-container
+    build: ./flask_app
+    volumes:
+      - './flask_app:/usr/src/flask-app'
+    ports:
+      - '5000:5000'
+  
+  angular-service:
+    container_name: angular-service-container
+    build: ./ui_app
+    volumes:
+      - './ui_app:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    ports:
+      - '4200:4200'
+    depends_on:
+      - flask-service

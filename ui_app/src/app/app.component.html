@@ -1,0 +1,62 @@
+<!-- Step 6: Design Root Component-->
+<div class="container back">
+    <div class="row">
+        <div class="sidenav column left">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light pt-3 flex-column">
+
+                    <h1>
+                        <a class="navbar-brand" href="index.html">menu
+                        </a>
+                    </h1>
+                    <button class="navbar-toggler" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav text-center flex-column ml-auto">
+                            <li class="nav-item active">
+                                <a [routerLink]="['/home']">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a [routerLinkActive]="['active']" [routerLink]="['/view-book']">
+                                    Books
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a [routerLinkActive]="['active']" [routerLink]="['/about']">
+                                    About
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a [routerLinkActive]="['active']" [routerLink]="['/login']">
+                                    Admin
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a [routerLinkActive]="['active']" [routerLink]="['/contact']">
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <footer id="sticky-footer" class="py-4">
+                        <div class="container text-center"><br /><br /><br /><br /><br /><br />
+                            <br /><br /><br /><br /><br /><br />
+                            <small>Copyright &copy; The Bookshelf</small>
+                        </div>
+                    </footer>
+                </nav>
+
+            </header>
+
+
+        </div>
+        <div class="column right offset-lg-4">
+
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

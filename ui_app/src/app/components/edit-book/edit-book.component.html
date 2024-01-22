@@ -1,0 +1,94 @@
+<br /><br />
+<div class="offset-lg-2 col-lg-6">
+    <div class="row">
+        <h3>Edit Book &nbsp; &nbsp;
+            <br /><br />
+            <button class="btn btn-danger" (click)="logOutBook()">LogOff</button>
+        </h3>
+    </div>
+    <br />
+
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+
+        <!--beginning of book name text box-->
+        <div class="form-group">
+            <label for="id">Book Title: </label>
+            <input type="number" class="form-control" formControlName="id" id="id">
+            <div *ngIf="submitted && editForm.get('id')?.errors" class="error">
+                <div class="text-danger" *ngIf="submitted && editForm.get('id')?.errors?.['required']">
+                    Book Id is required...
+                </div>
+            </div>
+        </div>
+        <!--end of book name text box-->
+
+        <!--beginning of book name text box-->
+        <div class="form-group">
+            <label for="title">Book Title: </label>
+            <input type="text" class="form-control" formControlName="title" id="title">
+            <div *ngIf="submitted && editForm.get('title')?.errors" class="error">
+                <div class="text-danger" *ngIf="submitted && editForm.get('title')?.errors?.['required']">
+                    Book Name is required...
+                </div>
+            </div>
+        </div>
+        <!--end of book name text box-->
+
+        <!--beginning of book id text box-->
+        <div class="form-group">
+            <label for="available">Available: </label>
+            <select formControlName="available" class="form-control">  
+                <option *ngFor="let w of ['True', 'False']">{{w}}</option>  
+            </select>
+            <div *ngIf="submitted && editForm.get('available')?.errors" class="error">
+                <div class="text-danger" *ngIf="submitted && editForm.get('available')?.errors?.['required']">
+                    Book available is required..
+                </div>
+            </div>
+        </div>
+        <!--end of  book id  text box-->
+
+
+        <!--beginning of book Fees text box-->
+        <div class="form-group">
+            <label for="price">Book Price: </label>
+            <input type="string" class="form-control" formControlName="price" id="price">
+            <div *ngIf="submitted && editForm.get('price')?.errors" class="error">
+                <div class="text-danger" *ngIf="submitted && editForm.get('price')?.errors?.['required']">
+                    Book Price is required..
+                </div>
+            </div>
+        </div>
+        <!--end of book Fees text box-->
+
+        <!--beginning of book Fees text box-->
+        <div class="form-group">
+            <label for="author">Book Author: </label>
+            <input type="string" class="form-control" formControlName="author" id="author">
+            <div *ngIf="submitted && editForm.get('author')?.errors" class="error">
+                <div class="text-danger" *ngIf="submitted && editForm.get('author')?.errors?.['required']">
+                    Book Author is required..
+                </div>
+            </div>
+        </div>
+<!--end of book Fees text box-->
+
+        <br />
+        <div class="row">
+            &nbsp;
+            &nbsp;
+            <button class="btn btn-success">Update</button>
+            &nbsp;
+            &nbsp; &nbsp;
+            &nbsp;
+            <button class="btn btn-danger" type="reset">Reset</button>
+            &nbsp;
+            &nbsp; &nbsp;
+            &nbsp;
+            <a class="btn btn-warning" [routerLink]="['/list-book']">List</a>
+            <br />
+            <br />
+        </div>
+    </form>
+</div>

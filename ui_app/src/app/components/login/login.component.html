@@ -1,0 +1,65 @@
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="col-lg-6 offset-lg-2">
+    <div class="jumbotron-fluid">Login</div>
+    <br/>
+    <br/>
+    <br/>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" class="form-control" formControlName="email" id="email" />
+            <div *ngIf="submitted && loginForm.get('email')?.errors" class="errors">
+                <div class="text-danger" *ngIf="loginForm.get('email')?.errors?.['required']">
+                    Email is required..
+                </div>
+            </div>
+        </div>
+        <!-- end of email text box -->
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" formControlName="password" id="password" />
+            <div *ngIf="submitted && loginForm.get('password')?.errors" class="errors">
+                <div class="text-danger" *ngIf="loginForm.get('password')?.errors?.['required']">
+                    Password is required..
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="row">
+            &nbsp;&nbsp;&nbsp;
+
+            <button class="btn btn-success">Login</button>
+            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+
+
+
+
+            <button class="btn btn-danger">Cancel</button>
+
+            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+
+
+
+
+            <button class="btn btn-warning" [routerLink]="['/home']">
+                Home</button>
+            <br/>
+            <br/>
+        </div>
+
+        <div *ngIf="invalidLogin" class="error">
+            <div class="text-danger">
+                Invalid Credentials..
+            </div>
+        </div>
+    </form>
+</div>

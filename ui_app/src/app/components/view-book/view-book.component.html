@@ -1,0 +1,72 @@
+<br />
+<br />
+
+<div class="row">
+    <br />
+
+    <div class="col-lg-4">
+        <div class="jumbotron-fluid">Details</div>
+        <br />
+    </div>
+</div>
+
+<br />
+
+
+<!--end of first column -->
+<div class="row">
+
+    <!-- <div class="col-lg-6">
+        <br/>
+
+        <div class="form-group">
+            <label for="title" class="font-weight-bold">
+                Search By Book Title:
+            </label>
+            <input type="text" class="form-control" [(ngModel)]="searchText" />
+        </div>
+    </div>
+</div> -->
+<br />
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <ng-container>
+
+            <table class="table table-stripped table-responsive
+            table-hover">
+                <thead>
+                    <!-- <th class="text-hide">Id</th> -->
+                    <th class="text-center">Book Title</th>
+                    <th class="text-center">Available</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Author</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of books">
+
+
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.available }}</td>
+                        <td>{{ book.price }}</td>
+                        <td>{{ book.author }}</td>
+
+                    </tr>
+                    <!-- <tr>
+                        <td NgIf="books.length ===0" colspan="5">
+                            <h5 class="text-center text-danger">
+                                Book does not exist
+                            </h5>
+                        </td>
+                    </tr>
+                    <tr NgIf="!books || books.length==0">
+                        <th colspan="5">
+                            <p class="text-right text-danger">
+                                Sorry, no Book available..!
+                            </p>
+                        </th>
+                    </tr> -->
+                </tbody>
+            </table>
+        </ng-container>
+    </div>
+</div>
